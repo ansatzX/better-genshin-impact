@@ -220,7 +220,7 @@ jobs:
       - name: 📥 Download last release
         uses: robinraju/release-downloader@v1.8
         with:
-          repository: "babalae/better-genshin-impact"
+          repository: "ansatzX/better-genshin-impact"
           latest: true
           fileName: "BetterGI_v*.7z"
           out-file-path: 'last'
@@ -229,7 +229,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          $releasesUrl = "https://api.github.com/repos/babalae/better-genshin-impact/releases"
+          $releasesUrl = "https://api.github.com/repos/ansatzX/better-genshin-impact/releases"
           $headers = @{
               "Authorization" = "Bearer $env:GITHUB_TOKEN"
               "Accept" = "application/vnd.github.v3+json"
@@ -369,7 +369,7 @@ jobs:
             artifacts/BetterGI_Metadata/*.json
 
   mirrorchyan_uploading:
-    if: github.repository_owner == 'babalae' && contains(needs.validate.outputs.version, '-')
+    if: github.repository_owner == 'ansatzX' && contains(needs.validate.outputs.version, '-')
     needs: [validate, build_dist, build_installer]
     runs-on: macos-latest
     steps:
