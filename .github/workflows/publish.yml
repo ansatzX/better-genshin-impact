@@ -220,7 +220,7 @@ jobs:
       - name: 📥 Download last release
         uses: robinraju/release-downloader@v1.8
         with:
-          repository: "ansatzX/better-genshin-impact"
+          repository: "babalae/better-genshin-impact"
           latest: true
           fileName: "BetterGI_v*.7z"
           out-file-path: 'last'
@@ -229,7 +229,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          $releasesUrl = "https://api.github.com/repos/ansatzX/better-genshin-impact/releases"
+          $releasesUrl = "https://api.github.com/repos/babalae/better-genshin-impact/releases"
           $headers = @{
               "Authorization" = "Bearer $env:GITHUB_TOKEN"
               "Accept" = "application/vnd.github.v3+json"
